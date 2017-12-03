@@ -2,9 +2,44 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="assets/css/selectize.css">
+  <link rel="stylesheet" href="assets/datepicker.min.css">
   <title>Task Progress</title>
 </head>
 <body>
-<h1>Hello World!</h1>
+  <div class="container">
+    <div class="wrapper">
+      <div class="header">
+        <a href="" class="in-progress"></a>
+        <a href="" class="completed"></a>
+      </div>
+      <div class="process-tasks"></div>
+      <div class="completed-tasks"></div>
+      <div class="add-task">
+        <input type="text" id="name">
+        <label for="name">Task Name</label>
+        <div class="color-picker"></div>
+        <form>
+          <input type="radio" id="countElements" name="countType" value="elements">
+          <label for="countElements"> Count Elements</label>
+          <input type="radio" id="countTime" name="countType" value="time">
+          <label for="countTime"> Count Time</label>
+        </form>
+        <input type="text" id="qt">
+        <label for="qt">How much?</label>
+        <input type="text" id="exp-date">
+        <label for="exp-date">Expiration Date</label>
+        <input type="checkbox" name="isTomatoes" value="true"> Count Tomatoes
+        <textarea id="comment" name="comment" rows="8" cols="80"></textarea>
+        <a href="" class="submit">Ok!</a>
+      </div>
+      <div class="task-details"></div>
+    </div>
+  </div>
 </body>
+<script type="text/javascript" src="assets/jquery.min.js"></script>
+<script src="assets/js/standalone/selectize.min.js" charset="utf-8"></script>
+<script src="assets/datepicker.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/main.js"></script>
 </html>
