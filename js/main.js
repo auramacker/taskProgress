@@ -19,7 +19,6 @@
     singleTask.expDate = $(".add-task #exp-date").val();
     singleTask.comment = $(".add-task #comment").val();
     singleTask.createDate = $.now();
-    singleTask.update
   };
   function updateTask(){
 
