@@ -17,22 +17,34 @@
       <div class="process-tasks"></div>
       <div class="completed-tasks"></div>
       <div class="add-task">
-        <input type="text" id="name">
-        <label for="name">Task Name</label>
-        <div class="color-picker"></div>
+        <div class="task-name">
+          <input type="text" id="name" placeholder="Task Name">
+          <div class="color-picker">
+            <a class="blue" href=""></a>
+            <a class="deep-green" href=""></a>
+            <a class="red" href=""></a>
+            <a class="purple" href=""></a>
+            <a class="light-blue" href=""></a>
+            <a class="olive" href=""></a>
+          </div>
+        </div>
         <form>
-          <input type="radio" id="countElements" name="countType" value="elements">
-          <label for="countElements"> Count Elements</label>
-          <input type="radio" id="countTime" name="countType" value="time">
-          <label for="countTime"> Count Time</label>
+          <div class="form-part">
+            <input type="radio" id="countElements" name="countType" value="elements">
+            <label for="countElements"> Count Elements</label>
+          </div>
+          <div class="form-part">
+            <input type="radio" id="countTime" name="countType" value="time">
+            <label for="countTime"> Count Time</label>
+          </div>
         </form>
         <input type="text" id="qt">
         <label for="qt">How much?</label>
         <input type="text" id="exp-date">
-        <label for="exp-date">Expiration Date</label>
+        <label for="exp-date">Expiration Date</label><br>
         <input type="checkbox" name="isTomatoes" value="true"> Count Tomatoes
         <textarea id="comment" name="comment" rows="8" cols="80"></textarea>
-        <a href="" class="submit">Ok!</a>
+        <a id="send-data" href="" class="submit">Ok!</a>
       </div>
       <div class="task-details"></div>
     </div>

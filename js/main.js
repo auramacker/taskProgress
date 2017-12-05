@@ -1,5 +1,9 @@
 (function () {
-  var _tasks = [];
+  var _tasks = JSON.parse(localStorage.getItem("tasks"));
+  $("#send-data").on("click", function(e){
+    e.preventDefault();
+    addTask();
+  })
   function getTasks(){
 
   };
@@ -19,6 +23,9 @@
     singleTask.expDate = $(".add-task #exp-date").val();
     singleTask.comment = $(".add-task #comment").val();
     singleTask.createDate = $.now();
+    _tasks.push(singleTask);
+    localStorage.setItem("tasks", JSON.stringify(_tasks));
+    console.log(JSON.parse(localStorage.getItem("tasks")));
   };
   function updateTask(){
 
@@ -37,8 +44,8 @@
     createDate: "30 nov 2017",
     updateDate: false
   };
-  //localStorage.setItem("first", JSON.stringify(task));
-  $("#test").selectize();
+  // localStorage.setItem("first", JSON.stringify(task));
+  //$(".add-task input").selectize();
   $(".add-task #exp-date").datepicker();
-  console.log(JSON.parse(localStorage.getItem("first")));
+  // console.log(JSON.parse(localStorage.getItem("")));
 })();

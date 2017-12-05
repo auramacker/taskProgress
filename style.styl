@@ -1,0 +1,72 @@
+gray-color = #979797
+blue-color = #4690EB
+green-color = #63DA38
+red-color = #FF3B30
+purple-color = #CC73E1
+light-blue = #BBDEFB
+olive-color = #CDDC39
+
+
+body
+ margin 0
+ padding 0
+
+.container
+   width 100%
+   background #fff
+   margin 0 auto
+   text-align center
+
+ .wrapper
+   width: 350px
+   text-align center
+   margin 0 auto
+
+ .task-name
+   height 60px
+   border-bottom 1px solid gray-color
+   position relative
+   input
+     left 0
+     right 0
+     bottom 10px
+     margin-left auto
+     margin-right auto
+     width 180px
+     position absolute
+     border none
+     font 20px "Charter"
+     font-weight bold
+     letter-spacing 2.22px
+     text-align center
+     color blue-color
+     &::placeholder
+       color blue-color
+     &:focus
+       outline none
+    .color-picker
+      width 70px
+      height 44px
+      position absolute
+      right 10px
+      top 8px
+      a
+        display block
+        width 15px
+        height 15px
+        border 1px solid transparent
+        background-color #000
+        float left
+        margin 2.5px
+      .blue
+        background-color blue-color
+      .deep-green
+        background-color green-color
+      .red
+        background-color red-color
+      .light-blue
+        background-color light-blue
+      .purple
+        background-color purple-color
+      .olive
+        background-color olive-color
