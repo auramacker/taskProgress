@@ -73,3 +73,26 @@ body {
 .task-name .color-picker .olive {
   background-color: #cddc39;
 }
+.form-part {
+  margin-top: 20px;
+}
+.form-part .wrapper {
+  width: 250px;
+  margin: 0 auto;
+  text-align: center;
+}
+.form-part .radio-wrapper + .radio-wrapper {
+  margin-left: 20px;
+}
+.form-part .radio-wrapper {
+  display: inline-block;
+}
+.form-part label {
+  font: bold 12px "Century Gothic";
+  color: #8e8e91;
+}
+.form-part .section-name {
+  font: 13px "Century Gothic";
+  letter-spacing: 1.92px;
+  color: #979797;
+}

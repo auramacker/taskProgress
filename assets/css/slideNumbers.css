@@ -1,0 +1,17 @@
+.slideNumbers {
+  width: 30px;
+  height: 34px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  margin: 0 auto;
+}
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+.slideNumbers a {
+  display: block;
+}
+.slideNumbers .number-wrapper {
+  transition: all 0.3s ease-in-out;
+}

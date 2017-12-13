@@ -47,5 +47,10 @@
   // localStorage.setItem("first", JSON.stringify(task));
   //$(".add-task input").selectize();
   $(".add-task #exp-date").datepicker();
+  $("input[type=radio]").iCheck({
+    checkboxClass: 'icheckbox_flat-pink',
+    radioClass: 'iradio_flat-pink'
+  });
+  $("#qt").slideNumbers();
   // console.log(JSON.parse(localStorage.getItem("")));
 })();

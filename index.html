@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="assets/css/slideNumbers.css">
+  <link rel="stylesheet" href="assets/css/pink.css">
   <link rel="stylesheet" href="assets/css/selectize.css">
   <link rel="stylesheet" href="assets/datepicker.min.css">
   <title>Task Progress</title>
@@ -28,21 +30,31 @@
             <a class="olive" href=""></a>
           </div>
         </div>
-        <form>
           <div class="form-part">
-            <input type="radio" id="countElements" name="countType" value="elements">
-            <label for="countElements"> Count Elements</label>
+            <h3 class="section-name">Count task progress as: </h3>
+            <div class="wrapper">
+              <div class="radio-wrapper">
+                <input type="radio" id="countElements" name="countType" value="elements">
+                <label for="countElements"> Days</label>
+              </div>
+              <div class="radio-wrapper">
+                <input type="radio" id="countTime" name="countType" value="time">
+                <label for="countTime"> Hours</label>
+              </div>
+            </div>
+
           </div>
           <div class="form-part">
-            <input type="radio" id="countTime" name="countType" value="time">
-            <label for="countTime"> Count Time</label>
+            <h3 class="section-name">How much time?</h3>
+            <div id="qt"></div>
           </div>
-        </form>
-        <input type="text" id="qt">
-        <label for="qt">How much?</label>
-        <input type="text" id="exp-date">
-        <label for="exp-date">Expiration Date</label><br>
-        <input type="checkbox" name="isTomatoes" value="true"> Count Tomatoes
+          <div class="form-part">
+            <input type="text" id="exp-date">
+            <label for="exp-date">Expiration Date</label><br>
+          </div>
+          <div class="form-part">
+            <input type="checkbox" name="isTomatoes" value="true"> Count Tomatoes
+          </div>
         <textarea id="comment" name="comment" rows="8" cols="80"></textarea>
         <a id="send-data" href="" class="submit">Ok!</a>
       </div>
@@ -53,5 +65,7 @@
 <script type="text/javascript" src="assets/jquery.min.js"></script>
 <script src="assets/js/standalone/selectize.min.js" charset="utf-8"></script>
 <script src="assets/datepicker.min.js" charset="utf-8"></script>
+<script src="assets/js/icheck.min.js"></script>
+<script type="text/javascript" src="js/slideNumbers.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 </html>
