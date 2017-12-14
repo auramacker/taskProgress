@@ -38,16 +38,18 @@
           $root.find("a").removeClass("active-number");
           $(elementsArray[currentElement]).addClass("active-number");
           $root.attr("data-current-number", currentElement);
-        })
+          var elementCenter = elementHeight / 2;
+          var newOffset = (offsetDefault - (elementHeight * currentElement)) + elementCenter;
+          $(".number-wrapper").offset({top: newOffset});
+        });
+
         $root.hover(
           function(){
             $root.addClass("active");
           }, function() {
             $root.removeClass("active");
             if ($root.attr("data-current-number")) {
-              var elementCenter = elementHeight / 2;
-              var newOffset = (offsetDefault - (elementHeight * currentElement)) + elementCenter;
-              $(".number-wrapper").offset({top: newOffset});
+
             }
           }
         )

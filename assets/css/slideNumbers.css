@@ -1,5 +1,5 @@
 .slideNumbers {
-  width: 30px;
+  width: 35px;
   height: 34px;
   overflow-x: hidden;
   overflow-y: scroll;
@@ -11,6 +11,14 @@
 }
 .slideNumbers a {
   display: block;
+}
+.slideNumbers .active-number {
+  transform: scale(1.5);
+  transition: all 0.15s linear;
+  color: rgba(0,0,0,1);
+}
+.slideNumbers a {
+  color: rgba(0,0,0,0.5);
 }
 .slideNumbers .number-wrapper {
   transition: all 0.3s ease-in-out;
