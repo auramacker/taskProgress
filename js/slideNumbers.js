@@ -24,7 +24,7 @@
 			addMainStyle : function(){
         $root.toggleClass("slideNumbers");
         $root.append("<div class='number-wrapper'></div>")
-        for(var i = 1; i < 366; i++) {
+        for(var i = 0; i < 366; i++) {
           $root.find(".number-wrapper").append("<a class='number'>" + i + "</a>");
         }
         var offsetDefault = $root.find("a").offset().top;
@@ -38,9 +38,12 @@
           $root.find("a").removeClass("active-number");
           $(elementsArray[currentElement]).addClass("active-number");
           $root.attr("data-current-number", currentElement);
-          var elementCenter = elementHeight / 2;
-          var newOffset = (offsetDefault - (elementHeight * currentElement)) + elementCenter;
-          $(".number-wrapper").offset({top: newOffset});
+
+          // twist
+            var elementCenter = elementHeight / 2;
+            var newOffset = (offsetDefault - (elementHeight * currentElement)) + elementCenter;
+            $(".number-wrapper").offset({top: newOffset});
+
         });
 
         $root.hover(

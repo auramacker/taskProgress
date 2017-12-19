@@ -10,19 +10,18 @@
     background-size: contain !important;
     width: 24px;
     height: 24px;
-    background: url(pink.png) no-repeat;
     border: none;
     cursor: pointer;
 }
 
 .icheckbox_flat-pink {
+    background: url(cbu.png);
     background-position: 0 0;
 }
     .icheckbox_flat-pink.checked {
-        background-position: -22px 0;
+      background: url(cbc.png);
     }
     .icheckbox_flat-pink.disabled {
-        background-position: -44px 0;
         cursor: default;
     }
     .icheckbox_flat-pink.checked.disabled {

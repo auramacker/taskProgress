@@ -6,6 +6,7 @@ red-color = #FF3B30
 purple-color = #CC73E1
 light-blue = #BBDEFB
 olive-color = #CDDC39
+main-font = "Century Gothic"
 
 
 body
@@ -17,17 +18,68 @@ body
    background #fff
    margin 0 auto
    text-align center
-
- .wrapper
-   width: 350px
+ .app-block
+   width 350px
+   height 486px
+   overflow scroll
    text-align center
    margin 0 auto
+   outline 1px solid gray-color
+ .add-task
+   display none
+ .task-block
+   border-bottom 1px solid gray-color
+   margin-top 10px
+   &:first-child
+     padding-top 95px
+     margin-top 0px
+ .main-page
+   position relative
+   top 0px
+   .tabs
+     border-bottom 3px solid blue-color
+     overflow auto
+     width 350px
+     top 0
+     position fixed
+     background #fff
+     box-shadow 0px 8px 2px rgba(255,255,255,0.5)
+     .current
+       &:after
+         content ""
+         position absolute
+         top 0
+         left calc(50% - 1px)
+         display block !important
+         height 60px
+         width 2px
+         background linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 25%, rgba(151,151,151,1) 100%)
+     .active-tab
+       opacity 1
+       background rgba(255,255,255,1)
+       background  linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 47%, rgba(197,223,255,1) 100%)
+     a
+       display block
+       color #8E8E91
+       line-height 85px
+       opacity 0.7
+       text-align center
+       float left
+       width 50%
+       margin 0
+       padding 0
+       height 60px
+       font-family "Franklin Gothic Medium"
+       font-size 13px
+       text-transform uppercase
+       text-decoration none
 
  .task-name
    height 60px
    border-bottom 1px solid gray-color
    position relative
    input
+     transition all 0.2s linear
      left 0
      right 0
      bottom 10px
@@ -71,8 +123,52 @@ body
         background-color purple-color
       .olive
         background-color olive-color
+ .slideNumbers
+  cursor none
+  box-shadow 0 1px 0 deep-gray
+  border-bottom solid 5px #fff
+  a
+    font-family main-font
+  .number-wrapper
+    margin-top -6px
+ .buttons-wrapper
+   text-align center
+   padding-bottom 10px
+   margin-top 10px !important
  .form-part
-   margin-top 20px
+   margin-top 25px
+   #send-data + #cancel-data
+     margin-left 15px
+   #send-data, #cancel-data
+     display inline-block
+     width 46px
+     height 46px
+   #send-data
+     background url("assets/apply-button.png")
+   #cancel-data
+     background url("assets/cancel.png")
+   textarea
+     width 80%
+     resize none
+     border none
+     border-bottom 1px solid deep-gray
+     font-family main-font
+     font-size 12px
+     font-style italic
+     padding-bottom 5px
+     color gray-color
+   .timer-wrapper
+     margin 0 auto
+     text-align center
+   .checkbox-wrapper + .checkbox-wrapper
+     margin-left 20px
+   .checkbox-wrapper
+     display inline-block
+     font-family main-font
+     font-size 12px
+     color gray-color
+     span
+       margin-left 5px
    .wrapper
      width 250px
      margin 0 auto
@@ -82,9 +178,57 @@ body
    .radio-wrapper
      display inline-block
    label
-     font bold 12px "Century Gothic"
+     font bold 12px main-font
      color deep-gray
    .section-name
-     font 13px "Century Gothic"
+     font 13px main-font
      letter-spacing 1.92px
      color gray-color
+ .datepicker-panel
+   font-family main-font
+   color gray-color
+   padding
+ .datepicker-container
+   box-shadow none !important
+   padding 7px
+  &:after
+    display none !important
+  &:before
+    display none !important
+ #exp-date
+   width 100px
+   outline none
+   text-align center
+   font-family main-font
+   font-style italic
+   color gray-color
+   padding-bottom 5px
+   border-bottom 1px solid deep-gray
+   border-top none
+   border-right none
+   border-left none
+  &:focus
+    outline none
+
+
+.color-picker
+  .active
+    outline 1px solid gray-color
+.blue
+  &::placeholder
+    color blue-color !important
+.deep-green
+  &::placeholder
+    color green-color !important
+.red
+  &::placeholder
+    color red-color !important
+.purple
+  &::placeholder
+    color purple-color !important
+.light-blue
+  &::placeholder
+    color light-blue !important
+.olive
+  &::placeholder
+    color olive-color !important

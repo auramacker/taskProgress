@@ -11,23 +11,31 @@
 </head>
 <body>
   <div class="container">
-    <div class="wrapper">
-      <div class="header">
-        <a href="" class="in-progress"></a>
-        <a href="" class="completed"></a>
+    <div class="app-block">
+      <div class="main-page">
+        <div class="tabs">
+          <a href="" class="current active-tab">
+            current tasks
+          </a>
+          <a href="" class="completed">
+            completed
+          </a>
+        </div>
+        <div class="process-tasks">
+          <div class="tasks-wrapper"></div>
+        </div>
+        <div class="completed-tasks"></div>
       </div>
-      <div class="process-tasks"></div>
-      <div class="completed-tasks"></div>
       <div class="add-task">
         <div class="task-name">
           <input type="text" id="name" placeholder="Task Name">
-          <div class="color-picker">
-            <a class="blue" href=""></a>
-            <a class="deep-green" href=""></a>
-            <a class="red" href=""></a>
-            <a class="purple" href=""></a>
-            <a class="light-blue" href=""></a>
-            <a class="olive" href=""></a>
+          <div class="color-picker" data-set="#4690eb">
+            <a class="blue" data-color="#4690eb" href=""></a>
+            <a class="deep-green" data-color="#63da38" href=""></a>
+            <a class="red" data-color="#ff3b30" href=""></a>
+            <a class="purple" data-color="#cc73e1" href=""></a>
+            <a class="light-blue" data-color="#bbdefb" href=""></a>
+            <a class="olive" data-color="#cddc39" href=""></a>
           </div>
         </div>
           <div class="form-part">
@@ -49,14 +57,26 @@
             <div id="qt"></div>
           </div>
           <div class="form-part">
+            <h3 class="section-name">Expiration Date</h3>
             <input type="text" id="exp-date">
-            <label for="exp-date">Expiration Date</label><br>
           </div>
           <div class="form-part">
-            <input type="checkbox" name="isTomatoes" value="true"> Count Tomatoes
+            <div class="timer-wrapper">
+              <div class="checkbox-wrapper">
+                <input type="checkbox" name="isTime" value="true"> <span>Timer</span>
+              </div>
+              <div class="checkbox-wrapper">
+                <input type="checkbox" name="isTomatoes" value="true"> <span>Tomatoes</span>
+              </div>
+            </div>
           </div>
-        <textarea id="comment" name="comment" rows="8" cols="80"></textarea>
-        <a id="send-data" href="" class="submit">Ok!</a>
+        <div class="form-part">
+          <textarea id="comment" name="comment"></textarea>
+        </div>
+        <div class="form-part buttons-wrapper">
+          <a id="send-data" href="" class="submit"></a>
+          <a id="cancel-data" href="" class="cancel"></a>
+        </div>
       </div>
       <div class="task-details"></div>
     </div>
