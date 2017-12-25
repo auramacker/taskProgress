@@ -26,11 +26,17 @@
   })
   function getTasks(){
     for (var prop in _tasks) {
+      console.log(_tasks[prop]);
+      var expDate = _tasks[prop].expDate.replace(/\//g, ".");
+      var percentage = (_tasks[prop].progress / _tasks[prop].qt) * 100;
+      var progressPercentage = percentage / 300;
+      progressPercentage += "px";
+      percentage += "%";
       $(".main-page .process-tasks .tasks-wrapper").append("<div class='task-block'>"+
       "<div class='name'>"+ _tasks[prop].name +"</div>"+
-      "<div class='date'><p>exp. date: </p><span class='exp-date'>"+ _tasks[prop].expDate +"<span></div>"+
-      "<div class='precent'></div>"+
-      "<div class='progress-bar'></div>"+
+      "<div class='date'><span>exp. date: </span><span class='exp-date'>"+ expDate +"<span></div>"+
+      "<div class='precent'>"+ percentage +"</div>"+
+      "<div class='progress-wrapper'><div class='progress-bg' style='background-color: "+ _tasks[prop].color +"'></div><div class='progress-bar' style='background-color: "+ _tasks[prop].color +"; width: "+ progressPercentage +"'></div></div>"+
       "</div>")
     }
   };
@@ -51,6 +57,7 @@
     singleTask.countTime = $("input[name=isTime]:checked").val();
     singleTask.expDate = $(".add-task #exp-date").val();
     singleTask.comment = $(".add-task #comment").val();
+    singleTask.progress = 0;
     singleTask.createDate = $.now();
     _tasks.push(singleTask);
     localStorage.setItem("tasks", JSON.stringify(_tasks));
@@ -73,8 +80,7 @@
     createDate: "30 nov 2017",
     updateDate: false
   };
-  // localStorage.setItem("first", JSON.stringify(task));
-  //$(".add-task input").selectize();
+
   $(".add-task #exp-date").datepicker();
   $("input[type=radio], input[type=checkbox]").iCheck({
     checkboxClass: 'icheckbox_flat-pink',

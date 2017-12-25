@@ -20,12 +20,59 @@ body {
   display: none;
 }
 .task-block {
+  font-family: "Century Gothic";
+  font-size: 13px;
+  position: relative;
+  color: #979797;
+  text-align: left;
+  padding: 5px 25px 5px 25px;
   border-bottom: 1px solid #979797;
   margin-top: 10px;
+}
+.task-block .name {
+  margin-bottom: 5px;
+  color: #8e8e91;
+}
+.task-block .date span {
+  font-style: italic;
+  font-size: 10px;
+}
+.task-block .date .exp-date {
+  font-size: 13px;
+  font-weight: bold;
+  font-style: normal;
+}
+.task-block .precent {
+  position: absolute;
+  right: 30px;
+  bottom: 35px;
+  font-size: 21px;
+  font-weight: bold;
+  font-style: italic;
+}
+.task-block .progress-wrapper {
+  position: relative;
+}
+.task-block .progress-bg {
+  width: 300px;
+  height: 11px;
+  margin: 10px 0px 10px 0px;
+  opacity: 0.5;
+  border-radius: 5px;
+}
+.task-block .progress-bar {
+  top: 0;
+  height: 11px;
+  border-radius: 5px;
+  position: absolute;
+  opacity: 1;
 }
 .task-block:first-child {
   padding-top: 95px;
   margin-top: 0px;
+}
+.task-block:last-child {
+  border-bottom: none;
 }
 .main-page {
   position: relative;
@@ -34,6 +81,7 @@ body {
 .main-page .tabs {
   border-bottom: 3px solid #4690eb;
   overflow: auto;
+  z-index: 100;
   width: 350px;
   top: 0;
   position: fixed;
