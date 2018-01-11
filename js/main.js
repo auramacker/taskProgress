@@ -98,7 +98,6 @@ var controller = {
 })();
 
 
-<<<<<<< HEAD
 // (function () {
 //   if (localStorage.getItem("tasks") == null) {
 //     var _tasks = [];
@@ -190,10 +189,3 @@ var controller = {
 //   $("#qt").slideNumbers();
 //   // console.log(JSON.parse(localStorage.getItem("")));
 // })();
-=======
-  $("#exp-date").datepicker();
-
-  $("#quantity").slideNumbers();
-  // console.log(JSON.parse(localStorage.getItem("")));
-})();
->>>>>>> 80c205a0c1314eef20a3afb4f1d7c88478b4b348
