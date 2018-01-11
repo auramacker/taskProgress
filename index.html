@@ -1,13 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Task Progress</title>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700" rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/plugins/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/plugins/bootstrap-grid.min.css">
+	<link rel="stylesheet" href="assets/fonts/fontawesome/font-awesome.css">
+	<link rel="stylesheet" href="assets/css/plugins/slideNumbers.css">
+	<link rel="stylesheet" href="assets/css/plugins/datepicker.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+
 </head>
 <body>
 
+
+	<div class="tp-preloader">
+		<span class="tp-preloader__inner"></span>
+	</div>
+
+	<div class="tp-main">
+
+
+		<div class="tp-main__inner">
+
+
+			<ul class="tp-slides">
+
+				<li class="tp-slide" id="first-slide">
+
+					<div class="tp-slide__main tp-slide__main--center">
+						<div class="tp-slide__content">
+							<h3>For using <i>Strong</i> please activate local storage.</h3>
+							<p>
+								<a class="tp-simple-link" href="http://wp.vlthemes.com/dreamy/comments/feed/" title="How can I activate local storage?">How can I activate local storage?</a>
+							</p>
+						</div>
+					</div>
+					<!-- /.tp-slide__main -->
+
+					<div class="tp-slide__footer clearfix">
+						<div>
+							<div>
+							</div>
+							<div>
+								<a class="tp-btn tp-btn--primary" href="#" data-go-to="2">Done</a>
+							</div>
+						</div>
+					</div>
+					<!-- /.tp-slide__footer -->
+
+				</li>
+				<!-- /.tp-slide -->
+
+
+				<li class="tp-slide" id="second-slide">
+
+					<div class="tp-slide__main tp-slide__main--center">
+						<div class="tp-slide__content">
+							<img src="assets/img/login-user.png" alt="">
+							<h3>Hello<span></span>!</h3>
+							<p>Enter your <i>name</i> and we will start increase your productivity.</p>
+
+							<div class="input-group">
+								<div class="input-group-addon"><i class="fa fa-user"></i></div>
+								<input type="text" class="form-control" name="username">
+							</div>
+						</div>
+					</div>
+
+					<!-- /.tp-slide__main -->
+					<div class="tp-slide__footer">
+						<div>
+							<div>
+								<a class="tp-btn tp-btn--secondary" href="#" data-go-to="1">Back</a>
+							</div>
+							<div>
+								<a class="tp-btn tp-btn--primary" href="#" data-go-to="3">Done</a>
+							</div>
+						</div>
+					</div>
+					<!-- /.tp-slide__footer -->
+
+				</li>
+				<!-- /.tp-slide -->
+
+
+				<li class="tp-slide" id="third-slide">
+					<div class="tp-slide__header">
+						<div>
+							<div>
+							<span class="tp-color-dot is-active" data-color="red_color"></span><input type="text" value="Enter task name">
+						</div>
+							<div class="dropdown show">
+								<a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-tint"></i></a>
+								<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+									<h6 class="dropdown-header">Select color</h6>
+									<a class="dropdown-item is-active" href="#"><span class="tp-color-dot" data-color="red_color"></span>Red</a>
+									<a class="dropdown-item" href="#"><span class="tp-color-dot" data-color="orange_color"></span>Orange</a>
+									<a class="dropdown-item" href="#"><span class="tp-color-dot" data-color="yellow_color"></span>Yellow</a>
+									<a class="dropdown-item" href="#"><span class="tp-color-dot" data-color="green_color"></span>Green</a>
+									<a class="dropdown-item" href="#"><span class="tp-color-dot" data-color="blue_color"></span>Blue</a>
+									<a class="dropdown-item" href="#"><span class="tp-color-dot" data-color="purple_color"></span>Purple</a>
+									<a class="dropdown-item" href="#"><span class="tp-color-dot" data-color="gray_color"></span>Gray</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /.tp-slide__header -->
+
+					<div class="tp-slide__main">
+						<div class="tp-slide__content clearfix">
+
+		<div class="card">
+							  <div class="card-header">
+							    Count task progress as
+							  </div>
+							  <div class="card-block">
+							   <label class="custom-control custom-checkbox">
+									<input type="radio" class="custom-control-input" name="timeType" checked>
+									<span class="custom-control-indicator"></span>
+									<span class="custom-control-description">Days</span>
+								</label>
+
+								<label class="custom-control custom-checkbox">
+									<input type="radio" class="custom-control-input" name="timeType">
+									<span class="custom-control-indicator"></span>
+									<span class="custom-control-description">Hours</span>
+								</label>
+
+							  </div>
+							</div>
+
+
+
+
+<div class="card">
+							  <div class="card-header">
+							    How much time?
+							  </div>
+							  <div class="card-block">
+							  <div id="quantity"></div>
+
+							  </div>
+							</div>
+
+
+
+
+							<div class="card">
+							  <div class="card-header">
+							    Expiration Date
+							  </div>
+							  <div class="card-block">
+							  		<div class="input-group">
+								<div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+							    <input type="text" class="form-control" id="exp-date">
+							</div>
+							  </div>
+							</div>
+
+
+<div class="card">
+							  <div class="card-header">
+							    Time Counting
+							  </div>
+							  <div class="card-block">
+							  <label class="custom-control custom-checkbox">
+									<input type="radio" class="custom-control-input" name="timeType" checked>
+									<span class="custom-control-indicator"></span>
+									<span class="custom-control-description">Timer</span>
+								</label>
+
+								<label class="custom-control custom-checkbox">
+									<input type="radio" class="custom-control-input" name="timeType">
+									<span class="custom-control-indicator"></span>
+									<span class="custom-control-description">Tomatoes</span>
+								</label>
+
+							  </div>
+							</div>
+
+<div class="card">
+							  <div class="card-header">
+							    Your Comment
+							  </div>
+  <div class="card-block">
+								  <div class="form-group">
+								  	<div class="input-group">
+								<div class="input-group-addon"><i class="fa fa-comment-o"></i></div>
+								    <textarea class="form-control" id="comment" name="comment"></textarea>
+								</div>
+								  </div>
+
+						</div>
+						</div>
+
+
+
+					</div>
+				</div>
+				<!-- /.tp-slide__main -->
+				<div class="tp-slide__footer">
+					<div>
+						<div>
+							<a class="tp-btn tp-btn--secondary disabled" href="#">Cancel</a>
+						</div>
+						<div>
+							<a class="tp-btn tp-btn--primary" href="#">Submit</a>
+						</div>
+					</div>
+				</div>
+				<!-- /.tp-slide__footer -->
+			</li>
+			<!-- /.tp-slide -->
+
+
+		</ul>
+
+	</div>
+
+
+
+	<p class="tp-copyright">
+		&copy; Powered by VLThemes
+	</p>
+
+</div>
+<!-- /.tp-main -->
+
+
+
+
+
+
+
+<script src="assets/vendors/jquery.min.js"></script>
+<script src="assets/vendors/popper.min.js"></script>
+<script src="assets/vendors/bootstrap.min.js"></script>
+<script src="assets/vendors/slideNumbers.js"></script>
+<script src="assets/datepicker.min.js"></script>
+<script src="js/main.js"></script>
+
+<script src="assets/js/scripts.js"></script>
+
+
+
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<canvas id='magicCircle' width="500" height="500"></canvas>
-<script src="js/main.js" charset="utf-8"></script>
 </html>
