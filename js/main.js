@@ -81,11 +81,8 @@
     updateDate: false
   };
 
-  $(".add-task #exp-date").datepicker();
-  $("input[type=radio], input[type=checkbox]").iCheck({
-    checkboxClass: 'icheckbox_flat-pink',
-    radioClass: 'iradio_flat-pink'
-  });
-  $("#qt").slideNumbers();
+  $("#exp-date").datepicker();
+
+  $("#quantity").slideNumbers();
   // console.log(JSON.parse(localStorage.getItem("")));
 })();
