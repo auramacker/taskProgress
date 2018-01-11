@@ -7,7 +7,6 @@ $tf = 'Lora', serif
 $fa = 'FontAwesome'
 
 
-
 $primary_color = #f43861
 $secondary_color = #047bf8
 $white_color = #ffffff
@@ -57,21 +56,24 @@ body
 body
 	margin 0
 	padding 0 15px
+	
 	font-family $pf
 	font-size 14px
-	color $text_color
+	color #464646
 	line-height 1.6
 	text-rendering optimizeLegibility
 	-webkit-font-smoothing antialiased
+	
 	background linear-gradient(to bottom right, #D7BBEA, #65A8F1)
 
 h1, h2, h3, h4, h5, h6
 	margin 10px 0
+	
 	font-weight 700
 	line-height 1.2
 	font-family $sf
 	letter-spacing -.03em
-	color $heading_color
+	color #171717
 	
 h1
 	font-size 36px
@@ -92,7 +94,7 @@ h6
 	font-size 12px
 
 p
-	margin 0 0 1rem
+	margin 0 0 15px
 	
 a
 	color inherit
@@ -114,52 +116,52 @@ ol
 	padding 0
 	list-style-type none
 
-
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="tel"],
-input[type="url"],
-input[type="search"],
-input[type="number"],
-textarea
-	width 100%
-	padding 10px 15px
-	color rgba($text_color, .6)
-	font-size 14px
-	outline none
-	appearance none
-	// border 1px solid #eeeeee
-	// background-color #fafafa
+.form-control
+	padding 8px 15px
 	
-	+placeholder()
-		color rgba($text_color, .6)
-		opacity 1
+	color #464646
+	border-color #eaeaea
+
+.form-control:focus
+	outline none !important
+	border-color $secondary_color
+	box-shadow 0 0 0 1px #fff, 0 0 0 .2rem rgba($secondary_color, .25)
 	
-	&:focus
-		outline none
-		box-shadow inset 0 1px 2px rgba($heading_color, .2)
+.input-group-addon
+	padding 8px 13px
+	color #757575
+	background-color #f8f8f8
+	border-color #eaeaea
 
-
-
-
+.custom-checkbox
+	outline none !important
+	display inline-flex
+	align-items center
+	margin 0
+	& + .custom-checkbox
+		margin-left 15px
+		
 .custom-control-input:checked~.custom-control-indicator
 	background-color $secondary_color
+	
+.custom-control-indicator
+	background-color #eaeaea
+	
+.custom-control-input:focus~.custom-control-indicator
+	box-shadow 0 0 0 1px #fff, 0 0 0 .2rem rgba($secondary_color, .25)
 
-// Dropdown
 
 .dropdown-toggle
-	color #98a6ad
+	color #757575
 	outline none
 	&::after
 		display none
 	&:hover
-		color #98a6ad
-	
+		color #464646
 
 .dropdown-header
 	margin 0
-	color #aeaeaf
+	color #bbb
 	font-family $sf
 	font-size 10px
 	font-weight 700
@@ -167,330 +169,65 @@ textarea
 	text-transform uppercase
 	
 .dropdown-menu
-	border 1px solid rgba($heading_color, .1)
-
+	border 1px solid #eaeaea
+	
 .dropdown-item
 	display flex
 	align-items center
-	color $text_color
+	color #464646
 	font-size 14px
 	&:focus,
 	&:hover
-		color $heading_color
-		background-color #fafafa
+		color #171717
+		background-color #f8f8f8
 
 
-.tp-color-dot
-	position relative
-	display inline-flex
-	align-items center
-	justify-content center
-	height 1em
-	width 1em
-	margin-right 5px
-	border-radius 50%
-	border 2px solid
-	
-	&::before
-		content '\f00d'
-		display flex
-		align-items center
-		justify-content center
-		position absolute
-		top 0
-		left 0
-		bottom 0
-		right 0
-		font-family $fa
-		font-size 10px
-		line-height 1
-		color rgba($text_color, .3)
-		opacity 0
-	
-a.is-active:hover [data-color]::before
-	opacity 1
-	
-
-[data-color="red_color"]
-	background-color $red_color
-	border-color darken($red_color, 10%)
-	&::before
-		color rgba(#000, .5)
-		
-[data-color="orange_color"]
-	background-color $orange_color
-	border-color darken($orange_color, 10%)
-
-[data-color="yellow_color"]
-	background-color $yellow_color
-	border-color darken($yellow_color, 10%)
-
-[data-color="green_color"]
-	background-color $green_color
-	border-color darken($green_color, 10%)
-
-[data-color="blue_color"]
-	background-color $blue_color
-	border-color darken($blue_color, 10%)	
-
-[data-color="purple_color"]
-	background-color $purple_color
-	border-color darken($purple_color, 10%)	
-
-[data-color="gray_color"]
-	background-color $gray_color
-	border-color darken($gray_color, 10%)	
 
 
-// Buttons and links
-
-.tp-btn
-	display inline-block
-	padding 8px 20px
-	border-radius 4px
-	font-family $sf
-	font-size 12px
-	line-height 1.2
-	font-weight 700
-	letter-spacing 1px
-	text-transform uppercase
-	white-space nowrap
-	
-	&--primary
-		color $white_color
-		background-color $primary_color
-		box-shadow 0 2px 0 darken($primary_color, 15%)
-		&:hover
-			color $white_color
-			background-color darken($primary_color, 10%)
-			box-shadow 0 2px 0 darken($primary_color, 15%)
-		&:active
-			box-shadow 0 1px 0 darken($primary_color, 20%)
-			
-	&--secondary
-		color $c0
-		background-color $c1
-		box-shadow 0 2px 0 darken($c1, 15%)
-		
-		&:hover
-			color $white_color
-			background-color darken($c1, 10%)
-			box-shadow 0 2px 0 darken($c1, 15%)
-			
-		&:active
-			box-shadow 0 1px 0 darken($c1, 20%)
-			
-	&.disabled
-		opacity .5
-		pointer-events none
-		
-	&:active
-		top 1px
-		
-	
-.tp-simple-link
-	color $secondary_color
-	text-decoration underline
-	&:hover
-		color $secondary_color
-
-
-// Main window
+/*=====================================*/
+/* MAIN WINDOW
+/*=====================================*/
 
 .tp-main
 	display flex
 	align-items center
 	justify-content center
 	flex-direction column
+	
 	height 100%
 	width 100%
 
-.tp-main__inner
-	position relative
-	width 100%
-	height 100%
-	max-width 350px
-	max-height 480px
-	background-color $white_color
-	border-radius 6px
-	box-shadow 0px 5px 10px 0px rgba($heading_color, .1)
+	&__inner
+		position relative
+		width 100%
+		height 100%
+		max-width 350px
+		max-height 480px
+		
+		border-radius 6px
+		background-color #fff
+		box-shadow 0px 5px 10px 0px rgba(#171717, .1)
 	
 .tp-copyright
-	margin 1rem 0 0
+	margin 15px 0 0
+	
 	font-family $sf
 	font-size 8px
 	text-transform uppercase
 	font-weight 700
 	letter-spacing 2px
-	color rgba($white_color, 50%)
+	color rgba(#fff, 50%)
 
-
-.tp-slides
-	position relative
-	margin 0
-	padding 0
-	height 100%
-	list-style-type none
-
-	.tp-slide
-		display flex
-		flex-direction column
-		position absolute
-		height 100%
-		width 100%
-		
-		// Slide Out
-		filter blur(5px)
-		opacity 0
-		visibility hidden
-		transform scale(.8)
-		> *
-			flex 1 1 auto
-
-		
-		&__header
-			padding 1rem
-			border-bottom 1px solid rgba($heading_color, .05)
-			> div
-				display flex
-				justify-content space-between
-				
-		
-		&__footer
-			padding 1rem
-			border-top 1px solid rgba($heading_color, .05)
-			> div
-				display flex
-				justify-content space-between
-				
-		&__main
-			height 100%
-			overflow-y auto
-			padding 1rem
-			&::-webkit-scrollbar
-				display none
-				
-			&--center
-				display flex
-				align-items center
-				
-
-		&.is-active
-			visibility visible
-			animation slide-in .2s linear both
-		
-
-@keyframes slide-in
-	0%
-		filter blur(5px)
-		opacity 0
-		transform scale(.8)
-	100%
-		filter none
-		opacity 1
-		transform scale(1)
-
-
-// Preloader
-
-.tp-preloader
-	display flex
-	align-items center
-	justify-content center
-	position fixed
-	top 0
-	left 0
-	width 100%
-	height 100%
-	z-index 2
-	background-color $white_color
-	&__inner
-		width 40px
-		height 40px
-		border-width 3px 
-		border-style solid
-		border-color rgba($primary_color, 10%) rgba($primary_color, 10%) rgba($primary_color, 10%) $primary_color
-		border-radius 50%
-		animation clockwise 1s linear infinite
 	
-@keyframes clockwise
-	to
-		transform rotate(360deg)
 
-// First slide
 
-#first-slide
-	text-align center
-	
-	.tp-slide__main
-		padding 1rem 1.5rem
-		
-	p
-		margin-bottom 0
-	
-	h3
-		margin 0 0 1rem
+@import 'particles/preloader'
+@import 'particles/slides'
+@import 'particles/card'
+@import 'particles/buttons'
+@import 'particles/color-dot'
 
-#second-slide
-	
-	.tp-slide__main
-		padding 1rem 1.5rem
-		text-align center
-		
-	img
-		max-height 100px
-		margin 0 0 2rem
-	
-	h3
-		margin 0 0 1rem
-		
-		span:not(:empty)::before
-			content ', '
-	p
-		margin-bottom 2rem
-	
-	.input-group
-		max-width 80%
-		margin 0 auto
-			
+@import 'slides/slide-01'
+@import 'slides/slide-02'
+@import 'slides/slide-03'
 
-#third-slide
-	
-	.tp-slide__header > div > div
-		margin 0
-		display flex
-		align-items center
-		width 100%
-		input
-			margin 0
-			padding 0
-			border-radius 0
-			background none
-			box-shadow none
-			border none
-			color $heading_color
-			font-family $sf
-			font-weight 700
-			color $heading_color
-		
-	.dropdown-toggle
-		padding-left 15px
-
-.card-block
-	padding 1rem
-	text-align center
-	
-.card-header
-	background none
-	font-size 12px
-	text-transform uppercase
-	font-weight 700
-	text-align center
-	font-family $sf
-
-.card
-	border-radius 4px
-	box-shadow 0 0 30px 0 rgba(0, 0, 0, .1)
-
-.card + .card
-	margin-top 1rem

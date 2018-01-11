@@ -1,17 +1,17 @@
 var model = {
   test: "Hello",
   circleData: {
-    qt: 10,
-    current: 6
+	qt: 10,
+	current: 6
   },
   countPercents: function(x, y) { // y - 100%
-    return (x/y)*100;
+	return (x/y)*100;
   },
   countPercentsFrom: function(number, from) {
-    return (number*from)/100
+	return (number*from)/100
   },
   getRadians: function(degrees) {
-    return (Math.PI/180)*degrees
+	return (Math.PI/180)*degrees
   }
 };
 var view = {
@@ -35,33 +35,33 @@ var view = {
 		place.text(name);
 	},
   log: function(data) {
-    console.log(data);
+	console.log(data);
   },
   renderCircle: function(progress, isTimer, isTomatoes){
-    this.mC = document.getElementById("magicCircle");
-    mC = this.mC;
-    this.ctx = mC.getContext("2d");
-    ctx = view.ctx;
-    ctx.clearRect(0, 0, ctx.width, ctx.height);
-    ctx.beginPath();
-    var startDegrees = model.getRadians(-90);
-    ctx.arc(250,250,100, startDegrees, startDegrees + model.getRadians(progress), false);
-    ctx.stroke();
-    ctx.beginPath();
-    ctx.arc(250, 250, 60, 0, Math.PI * 2, false);
-    if (ctx.isPointInPath(this.mouseX, this.mouseY)) {
-      ctx.fillStyle = "red";
-    }
-    else {
-      ctx.fillStyle = 'black';
-    }
-    ctx.fill();
+	this.mC = document.getElementById("magicCircle");
+	mC = this.mC;
+	this.ctx = mC.getContext("2d");
+	ctx = view.ctx;
+	ctx.clearRect(0, 0, ctx.width, ctx.height);
+	ctx.beginPath();
+	var startDegrees = model.getRadians(-90);
+	ctx.arc(250,250,100, startDegrees, startDegrees + model.getRadians(progress), false);
+	ctx.stroke();
+	ctx.beginPath();
+	ctx.arc(250, 250, 60, 0, Math.PI * 2, false);
+	if (ctx.isPointInPath(this.mouseX, this.mouseY)) {
+	  ctx.fillStyle = "red";
+	}
+	else {
+	  ctx.fillStyle = 'black';
+	}
+	ctx.fill();
   },
   findOffset: function(canvas) {
-    return {x: $(canvas).offset().left, y: $(canvas).offset().top}
+	return {x: $(canvas).offset().left, y: $(canvas).offset().top}
   },
   clearCanvas: function(){
-    this.ctx.clearRect(0,0, this.mC.width, this.mC.height);
+	this.ctx.clearRect(0,0, this.mC.width, this.mC.height);
   }
 };
 var controller = {
@@ -80,53 +80,53 @@ var controller = {
 		view.writeUserName($('#second-slide h3 span') ,$('input[name="username"]').val());
 	},
   checkLocalRights: function(){
-    try {
-      if (localStorage.getItem("tasks") == null) {
-        var _tasks = [];
-        localStorage.setItem("tasks", JSON.stringify(_tasks));
-        var _tasks = JSON.parse(localStorage.getItem("tasks"));
+	try {
+	  if (localStorage.getItem("tasks") == null) {
+		var _tasks = [];
+		localStorage.setItem("tasks", JSON.stringify(_tasks));
+		var _tasks = JSON.parse(localStorage.getItem("tasks"));
 				view.setActiveSlide(2);
-      }
-      else {
-        var _tasks = JSON.parse(localStorage.getItem("tasks"));
+	  }
+	  else {
+		var _tasks = JSON.parse(localStorage.getItem("tasks"));
 				view.setActiveSlide(2);
-      }
-    }
-    catch(e) {
-      view.setActiveSlide(1);
-    }
+	  }
+	}
+	catch(e) {
+	  view.setActiveSlide(1);
+	}
   },
   drawCircle: function(number, oF) {
-    var percents = model.countPercents(number, oF);
-    var degrees = model.countPercentsFrom(percents, 360);
-    view.renderCircle(degrees, false, false);
+	var percents = model.countPercents(number, oF);
+	var degrees = model.countPercentsFrom(percents, 360);
+	view.renderCircle(degrees, false, false);
   },
   canvasMouse: function(x, y){
-    var pos = view.findOffset(view.mC);
-    view.mouseX = x - pos.x;
-    view.mouseY = y - pos.y;
-    view.clearCanvas(view.mC);
-    this.drawCircle(7, 10);
+	var pos = view.findOffset(view.mC);
+	view.mouseX = x - pos.x;
+	view.mouseY = y - pos.y;
+	view.clearCanvas(view.mC);
+	this.drawCircle(7, 10);
   }
 };
 
 (function(){
   var app = {
-    init: function(){
-      this.event();
-    },
-    event: function(){
-      $(document).ready(function(){
-        controller.checkLocalRights();
+	init: function(){
+	  this.event();
+	},
+	event: function(){
+	  $(document).ready(function(){
+		controller.checkLocalRights();
 				controller.callPreloader();
-        controller.drawCircle(7, 10);
-      });
+		controller.drawCircle(7, 10);
+	  });
 			$('input[name="username"]').on('keyup', function () {
 				controller.writeName();
 			});
-      $("#magicCircle").on("mousemove", function(e) {
-        controller.canvasMouse(e.pageX, e.pageY);
-      });
+	  $("#magicCircle").on("mousemove", function(e) {
+		controller.canvasMouse(e.pageX, e.pageY);
+	  });
 			$('a[data-go-to]').on('click', function(e) {
 				e.preventDefault();
 				controller.pageNavigate($(this).attr('data-go-to'));
@@ -135,7 +135,7 @@ var controller = {
 				e.preventDefault();
 				controller.refreshPage();
 			})
-    }
+	}
   }
   app.init()
 })();

@@ -1,0 +1,30 @@
+/*=====================================*/
+/* PRELOADER
+/*=====================================*/
+
+.tp-preloader
+	display flex
+	align-items center
+	justify-content center
+	
+	position fixed
+	top 0
+	left 0
+	width 100%
+	height 100%
+	
+	z-index 2
+	background-color #fff
+	
+	&__inner
+		width 40px
+		height 40px
+		border-width 3px 
+		border-style solid
+		border-color rgba($primary_color, 10%) rgba($primary_color, 10%) rgba($primary_color, 10%) $primary_color
+		border-radius 50%
+		animation clockwise 1s linear infinite
+	
+@keyframes clockwise
+	to
+		transform rotate(360deg)

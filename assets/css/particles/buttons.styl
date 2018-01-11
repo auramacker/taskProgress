@@ -1,0 +1,53 @@
+/*=====================================*/
+/* BUTTONS
+/*=====================================*/
+
+.tp-btn
+	position relative
+	display inline-block
+	padding 8px 20px
+	border-radius 4px
+	font-family $sf
+	font-size 12px
+	line-height 1.2
+	font-weight 700
+	letter-spacing 1px
+	text-transform uppercase
+	white-space nowrap
+	
+	&--primary
+		color $white_color
+		background-color $primary_color
+		box-shadow 0 2px 0 darken($primary_color, 15%)
+		&:hover
+			color $white_color
+			background-color darken($primary_color, 10%)
+			box-shadow 0 2px 0 darken($primary_color, 15%)
+		&:active
+			box-shadow 0 1px 0 darken($primary_color, 20%)
+			
+	&--secondary
+		color $c0
+		background-color $c1
+		box-shadow 0 2px 0 darken($c1, 15%)
+		
+		&:hover
+			color $white_color
+			background-color darken($c1, 10%)
+			box-shadow 0 2px 0 darken($c1, 15%)
+			
+		&:active
+			box-shadow 0 1px 0 darken($c1, 20%)
+			
+	&.disabled
+		opacity .5
+		pointer-events none
+		
+	&:active
+		top 1px
+		
+.tp-simple-link
+	color $secondary_color
+	text-decoration underline
+	&:hover
+		color $secondary_color

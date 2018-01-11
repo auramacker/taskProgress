@@ -1,0 +1,62 @@
+.tp-color-dot
+	position relative
+	display inline-flex
+	align-items center
+	justify-content center
+	height 1em
+	width 1em
+	flex-shrink 0
+	line-height 1
+	margin-right 5px
+	border-radius 50%
+	box-shadow inset 0 0 0 2px rgba($text_color, .1)
+	
+	&::before
+		content '\f00d'
+		display flex
+		align-items center
+		justify-content center
+		position absolute
+		top 0
+		left 0
+		bottom 0
+		right 0
+		font-family $fa
+		font-size 10px
+		line-height 1
+		color rgba($text_color, .3)
+		opacity 0
+	
+a.is-active:hover [data-color]::before
+	opacity 1
+	
+
+[data-color="red_color"]
+	background-color $red_color
+	border-color darken($red_color, 10%)
+	&::before
+		color rgba(#000, .5)
+		
+[data-color="orange_color"]
+	background-color $orange_color
+	border-color darken($orange_color, 10%)
+
+[data-color="yellow_color"]
+	background-color $yellow_color
+	border-color darken($yellow_color, 10%)
+
+[data-color="green_color"]
+	background-color $green_color
+	border-color darken($green_color, 10%)
+
+[data-color="blue_color"]
+	background-color $blue_color
+	border-color darken($blue_color, 10%)	
+
+[data-color="purple_color"]
+	background-color $purple_color
+	border-color darken($purple_color, 10%)	
+
+[data-color="gray_color"]
+	background-color $gray_color
+	border-color darken($gray_color, 10%)	
